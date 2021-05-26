@@ -17,6 +17,19 @@
       src="https://kit.fontawesome.com/27e53b408d.js"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="styles/main.css" />
     <title>Arthur Guzman | Portfolio</title>
   </head>
@@ -27,21 +40,21 @@
           <h2 class="navbar__logo__title">AG</h2>
         </div>
         <nav class="navbar__menu">
-            <a href="#projects">
-              <i class="fas fa-project-diagram"></i>
-              <span>Projects</span>
-            </a>
-            <a href="#skills">
-              <i class="fas fa-user-ninja"></i>
-              <span>Skills</span>
-            </a>  
-            <a href="#contact">
-              <i class="fas fa-envelope"></i>
-              <span>Contact</span>
-            </a>      
+          <a href="#projects">
+            <i class="fas fa-project-diagram"></i>
+            <span>Projects</span>
+          </a>
+          <a href="#skills">
+            <i class="fas fa-user-ninja"></i>
+            <span>Skills</span>
+          </a>
+          <a href="#contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+          </a>
         </nav>
       </div>
-      <section class="header">
+      <section class="header" data-aos="fade-down">
         <svg
           id="ba230943-1bdb-4bd0-9561-c7824586c7f7"
           data-name="Layer 1"
@@ -233,7 +246,7 @@
           <p class="header__dsc-2">I specialize in Responsive Web Design</p>
         </div>
       </section>
-      <section class="projects" id="projects">
+      <section class="projects" id="projects" data-aos="fade-down">
         <h2 class="projects__title">Projects</h2>
         <div class="projects__grid">
           <div class="projects__image">
@@ -256,7 +269,7 @@
           </div>
         </div>
       </section>
-      <section class="skills" id="skills">
+      <section class="skills" id="skills" data-aos="fade-down">
         <h2 class="projects__title">Skills</h2>
         <div class="skills__grid">
           <div class="skills__image">
@@ -270,11 +283,11 @@
           </div>
         </div>
       </section>
-      <section class="contact" id="contact">
+      <section class="contact" id="contact" data-aos="fade-down">
         <h2 class="projects__title">Contact</h2>
         <form action="#">
           <div class="contact__box">
-            <input type="email" required placeholder="Email"/>
+            <input type="email" required placeholder="Email" />
           </div>
           <div class="contact__box">
             <textarea
@@ -319,6 +332,12 @@
       </footer>
     </div>
 
-      <!-- <script src="js/app.js"></script>  -->
+    <!-- <script src="js/app.js"></script>  -->
+    <script>
+        AOS.init({
+        delay: 500,
+        duration: 1000,
+      });
+    </script>
   </body>
 </html>
