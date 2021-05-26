@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Titillium+Web&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+
+$clr-primary-very-light-blue: #00CBF8;
+// $clr-primary-light-blue: #845EC2;
+$clr-primary-light-blue: #2EB1F7;
+$clr-primary-white: #fff;
+$clr-primary-black: #000;
+$ff-lobster: 'Spectral', serif;
+$ff-roboto: 'Roboto', sans-serif;
+
+*, ::before, ::after{
+    box-sizing: border-box;
+}
+html, 
+body,
+h1,
+h2,
+p{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #fff;
+}
+.hero{
+    position: relative;
+}
+.navbar{
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__logo__title{
+        font-size: 1.8rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+    &__menu{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
+        height: 70px;
+        box-shadow: 0 0 10px rgba($color: #000000, $alpha: .5);
+        background: $clr-primary-light-blue;
+        display: flex;
+        overflow-x: auto;
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            min-width: 50px;
+            overflow: hidden;
+            white-space: nowrap;
+            font-family: 'Titillium Web', sans-serif;
+            color: $clr-primary-white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background .5s ease-in-out, color .5s ease-in-out;
+        }
+    }
+}
+.header{
+    padding: 7.5rem 2rem 12rem;
+    position: relative;
+    svg{
+        display: block;
+        margin-inline: auto;
+        width: 80%;
+        height: 10%;
+        margin-bottom: 3rem;
+        .circle-1{
+            fill: $clr-primary-light-blue;
+        }
+        .rect-1{
+            fill: $clr-primary-light-blue;
+        }
+    }
+    &__title{
+        font-size: 2.8rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        color: $clr-primary-light-blue;
+    }
+    &__dsc{
+        margin: 1rem 0;
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1.3rem;
+        color: #555;
+    }
+    &__dsc-2{
+        font-family: 'Titillium Web', sans-serif;
+        font-size: 1rem;
+        color: #555;
+        // letter-spacing: 1px;
+        line-height: 1.8;
+    }
+}
+.projects{
+    padding: 0 2rem;
+    &__title{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.3rem;
+        letter-spacing: 1px;
+        line-height: 1.5;
+        // color: $clr-primary-light-blue;
+    }
+    &__grid{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin: 3rem 0;
+    }
+    &__image::before{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: .5);
+        opacity: 0;
+        transition: opacity .8s ease-in-out;
+    }
+    &__image{
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.2);
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &:hover::before{
+            opacity: 1;
+        }
+    }
+}
+.skills{
+    margin: 4rem 0;
+    padding: 0 2rem;
+    &__grid{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin: 3rem 0;
+    }
+    &__image{
+        i{
+            font-size: 5rem;
+            transition: color .5s ease-in-out, transform .5s ease-in-out;
+            &:hover{
+                color: $clr-primary-light-blue;
+                transform: scale(1.2);
+            }
+        }
+    }
+}
+.contact{
+    margin-top: 5rem;
+    padding: 0 2rem;
+    form{
+        margin: 1rem 0;
+    }
+    &__box{
+        &:first-child{
+            margin-bottom: 2rem;
+        }
+        input{
+            width: 100%;
+            box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.2);
+            padding: .5rem 1rem;
+            font-size: 1rem;
+            font-family: 'Titillium Web', sans-serif;
+            &:focus{
+                background: #ccc;
+            }
+        }
+    }
+    &__input__dsc{
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            font-family: 'Titillium Web', sans-serif;
+            border: 2px solid $clr-primary-black;
+            box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.2);
+            resize: none;
+            &:focus{
+                background: #ccc;
+            }
+    }
+    &__submit__btn{
+        width: 100%;
+        margin: 2rem 0;
+        background: $clr-primary-black;
+        color: $clr-primary-white;
+        font-family: $ff-roboto;
+        font-weight: bold;
+        border: none;
+        box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.2);
+        transition: background .5s ease-in-out;
+        cursor: pointer;
+        height: 50px;
+        &:hover{
+            background: $clr-primary-light-blue;
+        }
+    }
+}
+.footer{
+    padding: 0 2rem;
+    margin: 3rem 0 70px;
+    background: $clr-primary-black;
+    text-align: center;
+    padding: 2rem 2.5rem;
+    &__menu{
+        display: none;
+        // ul{
+        //     list-style: none;
+        //     margin: 0;
+        //     padding: 0;
+        //     li{
+        //         margin: 1rem 0; 
+        //         a{
+        //             text-decoration: none;
+        //             color: $clr-primary-white;
+        //             font-family: $ff-roboto;
+        //             font-weight: bold;
+        //             transition: color .5s ease-in-out;
+        //             &:hover{
+        //                 color: $clr-primary-very-light-blue;
+        //             }
+        //         }
+        //     };
+        // }
+    }
+    &__icons{
+        margin-bottom: 2rem ;
+        a{
+            color: $clr-primary-white;
+            margin: 0 1rem;
+            span{
+                display: none;
+            }
+
+            i{
+                font-size: 2rem;
+                transition: color .5s ease-in-out;
+                &:hover{
+                    color: $clr-primary-very-light-blue;
+                }
+            }
+        }
+    }
+    &__copy__dsc{
+        font-family: $ff-roboto;
+        font-weight: bold;
+        color: $clr-primary-white;
+        color: #aaa;
+    }
+}
+@media (min-width: 320px) and (max-width: 359px)  {
+    .header{
+        padding: 1rem 2rem 5rem;
+        &__title{
+            font-size: 2rem;
+        }
+    }
+}
+    
+
+@media (min-width: 360px) and (max-width: 374px)  {
+    .header{
+        padding: 3rem 2rem 7rem;
+        &__title{
+            font-size: 2.3rem;
+        }
+    }
+    
+}
+
+@media (max-width: 767px) {
+    .navbar{
+        &__menu{
+            a{
+                &:hover{
+                    color: #000;
+                    background: $clr-primary-very-light-blue;
+                }
+            }
+        }
+    }
+    
+}
+@media (min-width: 768px) {
+    .navbar,
+    .header,
+    .projects,
+    .skills,
+    .contact,
+    .footer{
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .header{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+    .navbar{
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        &__menu{
+            all: unset;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            a{
+                color: $clr-primary-black;
+                margin: 0 .5rem;
+                &:hover{
+                    color: $clr-primary-light-blue;
+                }
+                i{
+                    display: none;
+                }
+            }
+        }
+    }
+    .skills{
+        &__grid{
+            gap: 5rem;
+        }
+        &__image{
+            i{
+                font-size: 8rem;
+            }
+        }
+    }
+    .footer{
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 992px) {
+    .navbar,
+    .header,
+    .projects,
+    .skills,
+    .contact,
+    .footer{
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    .navbar{
+        &__menu{
+            a{
+                margin: 0 1rem;
+            }
+        }
+    }
+    .projects{
+        &__grid{
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &__image{
+            width: 45%;
+            height: 400px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &:hover::before{
+                opacity: 1;
+            }
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .navbar,
+    .header,
+    .projects,
+    .skills,
+    .contact,
+    .footer{
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+    .header{
+        svg{
+            width: 800px;
+            max-width: 800px;
+        }
+    }
+    .navbar{
+        &__menu{
+            a{
+                margin: 0 1.5rem;
+            }
+        }
+    }
+    .projects{
+        &__image{
+            width: 30%;
+        }
+    }
+    .skills{
+        &__grid{
+            gap: 10rem;
+        }
+    }
+    .contact{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        form{
+            flex: 0 0 50%;
+        }
+    }
+}
+@media (min-width: 1440px) {
+    .navbar,
+    .header,
+    .projects,
+    .skills,
+    .contact,
+    .footer{
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+    .navbar{
+        &__menu{
+            a{
+                margin: 0 1.8rem;
+            }
+        }
+    }
+    .header{
+        &__title{
+            font-size: 3.5rem;
+        }
+    }
+
+}
+@media (min-width: 1600px) {
+    .navbar,
+    .header,
+    .projects,
+    .skills,
+    .contact,
+    .footer{
+        padding-left: 12rem;
+        padding-right: 12rem;
+    }
+
+}

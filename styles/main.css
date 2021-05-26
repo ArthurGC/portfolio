@@ -1,0 +1,423 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Titillium+Web&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap");
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+}
+
+.hero {
+  position: relative;
+}
+
+.navbar {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar__logo__title {
+  font-size: 1.8rem;
+  font-family: "Montserrat", sans-serif;
+}
+.navbar__menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  height: 70px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: #2EB1F7;
+  display: flex;
+  overflow-x: auto;
+}
+.navbar__menu a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  min-width: 50px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "Titillium Web", sans-serif;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.header {
+  padding: 7.5rem 2rem 12rem;
+  position: relative;
+}
+.header svg {
+  display: block;
+  margin-inline: auto;
+  width: 80%;
+  height: 10%;
+  margin-bottom: 3rem;
+}
+.header svg .circle-1 {
+  fill: #2EB1F7;
+}
+.header svg .rect-1 {
+  fill: #2EB1F7;
+}
+.header__title {
+  font-size: 2.8rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #2EB1F7;
+}
+.header__dsc {
+  margin: 1rem 0;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1.3rem;
+  color: #555;
+}
+.header__dsc-2 {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+.projects {
+  padding: 0 2rem;
+}
+.projects__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.3rem;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.projects__grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+.projects__image::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+.projects__image {
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.2);
+}
+.projects__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.projects__image:hover::before {
+  opacity: 1;
+}
+
+.skills {
+  margin: 4rem 0;
+  padding: 0 2rem;
+}
+.skills__grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+.skills__image i {
+  font-size: 5rem;
+  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.skills__image i:hover {
+  color: #2EB1F7;
+  transform: scale(1.2);
+}
+
+.contact {
+  margin-top: 5rem;
+  padding: 0 2rem;
+}
+.contact form {
+  margin: 1rem 0;
+}
+.contact__box:first-child {
+  margin-bottom: 2rem;
+}
+.contact__box input {
+  width: 100%;
+  box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: "Titillium Web", sans-serif;
+}
+.contact__box input:focus {
+  background: #ccc;
+}
+.contact__input__dsc {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: "Titillium Web", sans-serif;
+  border: 2px solid #000;
+  box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.2);
+  resize: none;
+}
+.contact__input__dsc:focus {
+  background: #ccc;
+}
+.contact__submit__btn {
+  width: 100%;
+  margin: 2rem 0;
+  background: #000;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  border: none;
+  box-shadow: 5px 5px 5px -1px rgba(0, 0, 0, 0.2);
+  transition: background 0.5s ease-in-out;
+  cursor: pointer;
+  height: 50px;
+}
+.contact__submit__btn:hover {
+  background: #2EB1F7;
+}
+
+.footer {
+  padding: 0 2rem;
+  margin: 3rem 0 70px;
+  background: #000;
+  text-align: center;
+  padding: 2rem 2.5rem;
+}
+.footer__menu {
+  display: none;
+}
+.footer__icons {
+  margin-bottom: 2rem;
+}
+.footer__icons a {
+  color: #fff;
+  margin: 0 1rem;
+}
+.footer__icons a span {
+  display: none;
+}
+.footer__icons a i {
+  font-size: 2rem;
+  transition: color 0.5s ease-in-out;
+}
+.footer__icons a i:hover {
+  color: #00CBF8;
+}
+.footer__copy__dsc {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: #fff;
+  color: #aaa;
+}
+
+@media (min-width: 320px) and (max-width: 359px) {
+  .header {
+    padding: 1rem 2rem 5rem;
+  }
+  .header__title {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 360px) and (max-width: 374px) {
+  .header {
+    padding: 3rem 2rem 7rem;
+  }
+  .header__title {
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 767px) {
+  .navbar__menu a:hover {
+    color: #000;
+    background: #00CBF8;
+  }
+}
+@media (min-width: 768px) {
+  .navbar,
+.header,
+.projects,
+.skills,
+.contact,
+.footer {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .navbar {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .navbar__menu {
+    all: unset;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar__menu a {
+    color: #000;
+    margin: 0 0.5rem;
+  }
+  .navbar__menu a:hover {
+    color: #2EB1F7;
+  }
+  .navbar__menu a i {
+    display: none;
+  }
+
+  .skills__grid {
+    gap: 5rem;
+  }
+  .skills__image i {
+    font-size: 8rem;
+  }
+
+  .footer {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  .navbar,
+.header,
+.projects,
+.skills,
+.contact,
+.footer {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .navbar__menu a {
+    margin: 0 1rem;
+  }
+
+  .projects__grid {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .projects__image {
+    width: 45%;
+    height: 400px;
+  }
+  .projects__image img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .projects__image:hover::before {
+    opacity: 1;
+  }
+}
+@media (min-width: 1200px) {
+  .navbar,
+.header,
+.projects,
+.skills,
+.contact,
+.footer {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .header svg {
+    width: 800px;
+    max-width: 800px;
+  }
+
+  .navbar__menu a {
+    margin: 0 1.5rem;
+  }
+
+  .projects__image {
+    width: 30%;
+  }
+
+  .skills__grid {
+    gap: 10rem;
+  }
+
+  .contact {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .contact form {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 1440px) {
+  .navbar,
+.header,
+.projects,
+.skills,
+.contact,
+.footer {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  .navbar__menu a {
+    margin: 0 1.8rem;
+  }
+
+  .header__title {
+    font-size: 3.5rem;
+  }
+}
+@media (min-width: 1600px) {
+  .navbar,
+.header,
+.projects,
+.skills,
+.contact,
+.footer {
+    padding-left: 12rem;
+    padding-right: 12rem;
+  }
+}/*# sourceMappingURL=main.css.map */
