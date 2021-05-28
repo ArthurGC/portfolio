@@ -3,12 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
 
 $clr-primary-very-light-blue: #00CBF8;
-// $clr-primary-light-blue: #845EC2;
 $clr-primary-light-blue: #2EB1F7;
 $clr-primary-white: #fff;
 $clr-primary-black: #000;
-$ff-lobster: 'Spectral', serif;
-$ff-roboto: 'Roboto', sans-serif;
 
 *, ::before, ::after{
     box-sizing: border-box;
@@ -22,7 +19,7 @@ p{
     padding: 0;
 }
 body{
-    background: #fff;
+    background: $clr-primary-white;
 }
 .hero{
     position: relative;
@@ -42,7 +39,7 @@ body{
         bottom: 0;
         width: 100%;
         z-index: 100;
-        height: 70px;
+        height: 55px;
         box-shadow: 0 0 10px rgba($color: #000000, $alpha: .5);
         background: $clr-primary-light-blue;
         display: flex;
@@ -98,7 +95,6 @@ body{
         font-family: 'Titillium Web', sans-serif;
         font-size: 1rem;
         color: #555;
-        // letter-spacing: 1px;
         line-height: 1.8;
     }
 }
@@ -109,41 +105,32 @@ body{
         font-size: 2.3rem;
         letter-spacing: 1px;
         line-height: 1.5;
-        // color: $clr-primary-light-blue;
     }
     &__grid{
         display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        gap: 2rem;
+        gap: 1.5rem;
         margin: 3rem 0;
-    }
-    &__image::before{
-        position: absolute;
-        content: '';
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba($color: #000000, $alpha: .5);
-        opacity: 0;
-        transition: opacity .8s ease-in-out;
+        padding: 0 1rem;
     }
     &__image{
+        background: $clr-primary-light-blue;
+        cursor: pointer;
         border-radius: 10px;
         position: relative;
         width: 100%;
-        height: 400px;
         overflow: hidden;
         box-shadow: 5px 5px 5px -1px rgba(0,0,0,0.2);
+        transition: transform .8s ease-in-out;
         img{
             width: 100%;
             height: 100%;
-            object-fit: cover;
         }
-        &:hover::before{
-            opacity: 1;
+        &:hover{
+            transform: scale(1.1);
         }
     }
 }
@@ -224,27 +211,6 @@ body{
     background: $clr-primary-black;
     text-align: center;
     padding: 2rem 2.5rem;
-    &__menu{
-        display: none;
-        // ul{
-        //     list-style: none;
-        //     margin: 0;
-        //     padding: 0;
-        //     li{
-        //         margin: 1rem 0; 
-        //         a{
-        //             text-decoration: none;
-        //             color: $clr-primary-white;
-        //             font-family: $ff-roboto;
-        //             font-weight: bold;
-        //             transition: color .5s ease-in-out;
-        //             &:hover{
-        //                 color: $clr-primary-very-light-blue;
-        //             }
-        //         }
-        //     };
-        // }
-    }
     &__icons{
         margin-bottom: 2rem ;
         a{
@@ -275,6 +241,14 @@ body{
         padding: 1rem 2rem 5rem;
         &__title{
             font-size: 2rem;
+        }
+    }
+    .projects{
+        &__title{
+            font-size: 2rem;
+        }
+        &__grid{
+            padding: 0 1rem;
         }
     }
 }
@@ -341,6 +315,11 @@ body{
             }
         }
     }
+    .projects{
+        &__image{
+            width: 45%;
+        }
+    }
     .skills{
         &__grid{
             gap: 5rem;
@@ -372,22 +351,16 @@ body{
             }
         }
     }
+}
+@media (min-width: 1024px) {
     .projects{
         &__grid{
-            flex-direction: row;
-            justify-content: space-between;
+            max-width: 1024px;
+            margin-inline: auto;
+            gap: 2.5rem;
         }
         &__image{
-            width: 45%;
-            height: 400px;
-            img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            &:hover::before{
-                opacity: 1;
-            }
+            width: 30%;
         }
     }
 }
@@ -406,17 +379,15 @@ body{
             width: 800px;
             max-width: 800px;
         }
+        &__title{
+            width: 15ch;
+        }
     }
     .navbar{
         &__menu{
             a{
                 margin: 0 1.5rem;
             }
-        }
-    }
-    .projects{
-        &__image{
-            width: 30%;
         }
     }
     .skills{
@@ -443,6 +414,7 @@ body{
         padding-left: 8rem;
         padding-right: 8rem;
     }
+    
     .navbar{
         &__menu{
             a{
@@ -468,4 +440,9 @@ body{
         padding-right: 12rem;
     }
 
+}
+@media (min-width: 1700px) {
+    .header > div{
+        flex-basis: 60%;
+    }
 }
